@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.16), transparent 24%),
+    radial-gradient(circle at top right, rgba(123, 223, 242, 0.16), transparent 20%),
+    linear-gradient(180deg, #081126 0%, #10254f 100%);
+  color: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.35);
+  color: #ffffff;
+}
+
+.glass-panel {
+  background: rgba(8, 17, 38, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(8, 17, 38, 0.25);
+  backdrop-filter: blur(18px);
+}
+
+.section-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.luxury-button {
+  background: linear-gradient(135deg, #f5d77a, #d4af37, #b88a15);
+  color: #081126;
+  box-shadow: 0 18px 40px rgba(212, 175, 55, 0.28);
+}
+
+.luxury-button:hover {
+  filter: brightness(1.02);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #7bdff2, #d4af37);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
